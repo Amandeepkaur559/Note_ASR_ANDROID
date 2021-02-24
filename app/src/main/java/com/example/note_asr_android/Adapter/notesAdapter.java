@@ -14,11 +14,12 @@ import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.note_asr_android.R;
+import com.example.note_asr_android.ViewActivity;
 
 import java.util.Date;
 import java.util.List;
 
-public abstract class notesAdapter extends RecyclerView.Adapter<notesAdapter.Viewholder> {
+public abstract class notesAdapter<Notes, Subjects> extends RecyclerView.Adapter<notesAdapter.Viewholder> {
 
     Context context;
     public List<Notes> notes;

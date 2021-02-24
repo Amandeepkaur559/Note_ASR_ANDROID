@@ -12,7 +12,7 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.List;
 
-public class SubjectAdapter {
+
 
     public abstract class SubjectAdapter extends RecyclerView.Adapter<SubjectAdapter.Viewholder> {
 
