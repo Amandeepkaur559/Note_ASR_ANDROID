@@ -107,7 +107,4 @@ public abstract class notesAdapter extends RecyclerView.Adapter<notesAdapter.Vie
         }
     }
 
-    public abstract void deleteAddress(int i);
-
-}
 
