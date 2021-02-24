@@ -13,14 +13,15 @@ import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.example.note_asr_android.Models.Notes;
+import com.example.note_asr_android.Models.Subjects;
 import com.example.note_asr_android.R;
 import com.example.note_asr_android.ViewActivity;
 
 import java.util.Date;
 import java.util.List;
 
-public abstract class notesAdapter<Notes, Subjects> extends RecyclerView.Adapter<notesAdapter.Viewholder> {
-
+public abstract class notesAdapter extends RecyclerView.Adapter<notesAdapter.Viewholder> {
     Context context;
     public List<Notes> notes;
     public List<Subjects> subjects;
@@ -34,7 +35,7 @@ public abstract class notesAdapter<Notes, Subjects> extends RecyclerView.Adapter
     @NonNull
     @Override
     public Viewholder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View itemview= LayoutInflater.from(context).inflate(R.layout.note_item,parent,false);
+        View  itemview= LayoutInflater.from(context).inflate(R.layout.note_item,parent,false);
         return new Viewholder(itemview);
     }
 
@@ -75,6 +76,7 @@ public abstract class notesAdapter<Notes, Subjects> extends RecyclerView.Adapter
 
 
     }
+
     @Override
     public int getItemCount() {
         return notes.size();
@@ -82,23 +84,19 @@ public abstract class notesAdapter<Notes, Subjects> extends RecyclerView.Adapter
 
     public class Viewholder extends RecyclerView.ViewHolder implements View.OnClickListener {
 
-        TextView date, title, description, txtSubjectItem;
-        ImageView note_img, delete;
+        TextView date,title,description,txtSubjectItem;
+        ImageView note_img,delete;
 
         public Viewholder(@NonNull View itemView) {
             super(itemView);
-            date = (TextView) itemView.findViewById(R.id.date);
-            title = (TextView) itemView.findViewById(R.id.title);
-            description = (TextView) itemView.findViewById(R.id.desc);
-            note_img = (ImageView) itemView.findViewById(R.id.note_image);
-            delete = (ImageView) itemView.findViewById(R.id.delete);
-            txtSubjectItem = (TextView) itemView.findViewById(R.id.txtSubjectItem);
+            date=(TextView)itemView.findViewById(R.id.date);
+            title=(TextView)itemView.findViewById(R.id.title);
+            description=(TextView)itemView.findViewById(R.id.desc);
+            note_img=(ImageView) itemView.findViewById(R.id.note_image);
+            delete=(ImageView) itemView.findViewById(R.id.delete);
+            txtSubjectItem =  (TextView)itemView.findViewById(R.id.txtSubjectItem);
             itemView.setOnClickListener(this);
-
-
         }
-
-
         @Override
         public void onClick(View v) {
 
@@ -112,3 +110,4 @@ public abstract class notesAdapter<Notes, Subjects> extends RecyclerView.Adapter
     public abstract void deleteAddress(int i);
 
 }
+
